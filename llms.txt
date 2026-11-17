@@ -1,0 +1,12 @@
+# Cinema Culture · MoviRunner × Filmosferatu
+
+> MoviRunner (Hakan Çeken) ve Filmosferatu (Gökan Çeken) içeriklerini bir araya getiren sinema, dizi, korku/gerilim ve oyun odaklı Türkçe film keşif sitesi.
+
+## Sayfalar
+- [Ana sayfa, en çok beğenilen videolar](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/): MoviRunner ve Filmosferatu'nun en çok beğenilen film videoları.
+- [Sinema ve Oyun Tarihi](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/tarihce.html): 1895'ten günümüze zaman tüneli ve sık sorulan sorular.
+- [Son 20 Yılın Ödül Arşivi](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/odul-arsivi.html): Ödüllü filmler, yönetmenler, oyuncular ve senaryolar.
+
+## Resmî hesaplar
+- MoviRunner: https://www.youtube.com/@MoviRunner , https://www.instagram.com/movirunner/ , https://x.com/movirunner
+- Filmosferatu: https://www.youtube.com/@Filmosferatu , https://www.instagram.com/filmosferatu/ , https://www.tiktok.com/@filmosferatu

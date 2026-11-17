@@ -1,0 +1,13 @@
+:root{--bg:#09090b;--c:#131317;--l:#27272a;--t:#f4f4f5;--m:#a1a1aa;--g:#eab308}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--bg);color:var(--t);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:inherit}header{display:flex;gap:1rem;flex-wrap:wrap;justify-content:space-between;align-items:center;padding:1rem 5%;border-bottom:1px solid var(--l);position:sticky;top:0;background:rgba(9,9,11,.95);z-index:5}
+header b{letter-spacing:.08em}header nav a{margin-left:1.1rem;text-decoration:none;font-size:.95rem}header nav a:hover{color:var(--g)}
+main{max-width:1100px;margin:0 auto;padding:2.5rem 5%}h1{font-size:clamp(1.8rem,5vw,2.6rem);margin-bottom:.8rem}h2{font-size:1.5rem;margin:2.2rem 0 1rem;border-left:4px solid var(--g);padding-left:.8rem}
+.lead{color:var(--m);max-width:760px;margin-bottom:1.5rem}.g{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+.card,.tl article,.faq div{background:var(--c);border:1px solid var(--l);border-radius:12px;padding:1.2rem}.card:hover{border-color:var(--g)}
+.tag{color:var(--g);font-size:.85rem;font-weight:700}.meta{color:var(--m);font-size:.9rem;margin:.3rem 0 .6rem}.note{margin-top:.8rem;padding:.6rem .8rem;border-left:3px solid #8b5cf6;background:rgba(139,92,246,.08);font-size:.92rem}
+.tl{display:grid;gap:1rem;border-left:2px solid var(--l);padding-left:1.4rem}.tl .y{color:var(--g);font-weight:800}.faq{display:grid;gap:1rem}.faq h3{font-size:1.05rem;margin-bottom:.3rem}.faq p{color:var(--m)}
+input[type=search]{width:100%;padding:.9rem 1.2rem;background:var(--c);border:1px solid var(--l);border-radius:10px;color:var(--t);font-size:1rem;margin:.5rem 0 1rem}
+.tabs{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:1.2rem}.tabs button,.w{background:var(--c);border:1px solid var(--l);color:var(--m);padding:.6rem 1rem;border-radius:8px;cursor:pointer;font-weight:600}
+.tabs button.on{background:var(--g);color:#000;border-color:var(--g)}.w{margin-top:.8rem;width:100%}.w.on{border-color:#22c55e;color:#4ade80}.p{display:none}.p.on{display:contents}#badge{display:inline-block;margin:.5rem 0 1rem;padding:.3rem .9rem;border:1px solid var(--g);color:var(--g);border-radius:20px;font-weight:700}
+footer{text-align:center;color:var(--m);padding:2rem 5%;border-top:1px solid var(--l);margin-top:3rem;font-size:.9rem}
