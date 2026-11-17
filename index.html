@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="MoviRunner ve Filmosferatu: bağımsız sinema eleştirisi ve keşif platformu.">
+<title>Cinema Culture · MoviRunner × Filmosferatu</title>
+<style>
+:root{--bg:#000;--fg:#fff;--ac:#c0c0c0;--card:#101010;--ln:#555;--ff:Arial,Helvetica,sans-serif;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*:before,*:after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--ff);line-height:1.6}
+button,input,select{font:inherit;color:inherit}button{cursor:pointer}
+.w{max-width:1160px;width:calc(100% - 32px);margin:auto}
+.bar{background:var(--ac);color:#000;text-align:center;padding:7px;font-size:11px;font-weight:900;letter-spacing:.16em}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--ln)}
+.nr{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0}
+.logo{font-weight:900;letter-spacing:.12em;font-size:16px;text-decoration:none;color:var(--fg)}
+.logo b{background:var(--fg);color:var(--bg);padding:6px 9px;margin-right:8px}
+nav,.tools{display:flex;gap:8px;flex-wrap:wrap}
+.b{background:transparent;border:1px solid var(--ln);padding:9px 12px;font-weight:800;font-size:11px;letter-spacing:.05em;text-decoration:none;color:var(--fg);display:inline-block}
+.b.on,.b.p{background:var(--fg);color:var(--bg);border-color:var(--fg);box-shadow:3px 3px 0 var(--ln)}
+.b:hover{transform:translate(-1px,-1px)}
+.hero{padding:60px 0 46px;display:grid;grid-template-columns:1.1fr .9fr;gap:32px;align-items:center}
+.ey{font-size:11px;font-weight:900;letter-spacing:.2em;color:var(--ac)}
+h1{font-size:clamp(40px,8vw,76px);line-height:.95;margin:14px 0 18px;letter-spacing:-.05em}h1 em{font-style:normal;color:var(--ac)}
+h2{font-size:clamp(24px,4vw,38px);margin:8px 0;letter-spacing:-.03em}
+p{color:inherit;opacity:.78}
+.art{border:2px solid var(--fg);padding:16px;box-shadow:9px 9px 0 var(--ln);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.t{min-height:210px;padding:18px;border:1px solid var(--ln);display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;text-decoration:none}
+.t strong{font-size:clamp(22px,3vw,34px);line-height:1}.t small{font-size:10px;letter-spacing:.14em}
+.t.a{background:var(--ac);color:#000}.t.f{background:#121212;color:#f1f1f1;border-color:#0077ff}
+.sec{padding:46px 0;border-top:1px solid var(--ln)}
+.g{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.c{background:var(--card);border:1px solid var(--ln);box-shadow:4px 4px 0 var(--ln);padding:12px}
+.th{aspect-ratio:16/9;background:linear-gradient(135deg,#222,#050505);border:1px solid var(--ln);display:grid;place-items:center;position:relative;overflow:hidden}
+.th iframe,.th video{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000;object-fit:contain}
+.c{content-visibility:auto;contain-intrinsic-size:auto 340px}
+.yt{display:inline-block;margin-top:8px;font-size:.85rem;opacity:.8;text-decoration:underline;color:inherit}
+.c{--gl:255,255,255;border-radius:16px;box-shadow:0 0 0 1px rgba(var(--gl),.5),0 0 18px rgba(var(--gl),.4),0 0 46px rgba(var(--gl),.2);transition:box-shadow .35s ease,transform .35s ease}
+.c.fs{--gl:80,150,255}
+.c:hover,.c:focus-within{transform:translateY(-4px);box-shadow:0 0 0 1px rgba(var(--gl),.9),0 0 26px rgba(var(--gl),.7),0 0 72px rgba(var(--gl),.38)}
+.th{border-radius:11px}
+.pl{box-shadow:0 0 18px rgba(255,255,255,.45)}
+.t.a,.t.f{box-shadow:0 0 30px rgba(255,255,255,.4)}
+@media (prefers-reduced-motion:reduce){.c{transition:none}.c:hover,.c:focus-within{transform:none}}
+.pl{border:1px solid #fff;color:#fff;border-radius:50%;width:54px;height:54px;background:transparent;font-size:22px}
+.m{font-size:10px;letter-spacing:.12em;color:var(--ac);font-weight:900;margin-top:12px}
+.c h3{margin:6px 0;font-size:17px}.c p{margin:0;font-size:13px}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.f{display:grid;grid-template-columns:2fr 1fr 1fr;gap:12px;border:1px solid var(--ln);padding:16px;box-shadow:5px 5px 0 var(--ln)}
+.f input,.f select{width:100%;height:42px;background:var(--bg);border:1px solid var(--ln);padding:0 10px}
+.dr{position:fixed;right:0;top:0;bottom:0;width:min(340px,100%);background:var(--card);border-left:2px solid var(--fg);padding:20px;padding-top:calc(20px + env(safe-area-inset-top,0px));z-index:20;overflow:auto;transform:translateX(105%);transition:.2s}
+.dr.o{transform:none}.dr label{display:block;font-size:11px;font-weight:900;letter-spacing:.1em;margin:14px 0 6px}
+.dr input[type=color]{width:56px;height:38px;padding:0;border:1px solid var(--ln);background:none}
+.dr input[type=text],.dr select{width:100%;height:38px;background:var(--bg);border:1px solid var(--ln);padding:0 8px}
+.cr{display:flex;gap:8px;align-items:center}.cr code{font-size:11px;opacity:.7}
+footer{border-top:1px solid var(--ln);padding:28px 0;font-size:12px;opacity:.75;margin-top:30px}
+.em{border:1px dashed var(--ln);padding:18px;text-align:center}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:36px 0}.g{grid-template-columns:repeat(2,1fr)}.f{grid-template-columns:1fr}}
+@media(max-width:520px){.g{grid-template-columns:1fr}.t{min-height:150px}}
+</style></head>
+<body><div class="bar" id="bar"></div>
+<header><div class="w nr"><a class="logo" href="#home"><b>CC</b>CINEMA CULTURE</a>
+<nav id="nav"></nav><div class="tools"><button class="b" id="thm" aria-label="Gece / Gündüz">☼ / ☾</button><button class="b" id="opt">⚙</button>
+<select class="b" id="lng" aria-label="Dil"><option value="tr">TR</option><option value="en">EN</option><option value="ru">RU</option><option value="zh">中文</option><option value="ja">日本語</option><option value="es">ES</option><option value="el">ΕΛ</option></select></div></div></header>
+<main id="app"></main>
+<footer><div class="w">© <span id="yr"></span> CINEMA CULTURE · MOVIRUNNER × FILMOSFERATU</div></footer>
+<aside class="dr" id="dr" aria-label="Görünüm"><button class="b" id="cl" style="float:right">×</button><h2 id="dt"></h2>
+<label id="l1"></label><div class="cr"><input type="color" id="k1"><input type="text" id="x1" maxlength="7"><code id="r1"></code></div>
+<label id="l2"></label><div class="cr"><input type="color" id="k2"><input type="text" id="x2" maxlength="7"><code id="r2"></code></div>
+<label id="l3"></label><div class="cr"><input type="color" id="k3"><input type="text" id="x3" maxlength="7"><code id="r3"></code></div>
+<label id="l4"></label><select id="ft"><option value="Arial,Helvetica,sans-serif">Arial</option><option value="Georgia,serif">Georgia</option><option value="'Times New Roman',serif">Times New Roman</option><option value="'Courier New',monospace">Courier New</option><option value="Verdana,sans-serif">Verdana</option><option value="'Trebuchet MS',sans-serif">Trebuchet MS</option></select>
+<div class="row"><button class="b" id="rs"></button></div></aside>
+<script>
+/* ===== İÇERİK: yalnızca gerçek, doğrulanmış kayıtları buraya ekleyin =====
+ videos:{id:'YouTube video kimliği',title:'Başlık',tag:'Etiket'}  posts:{title,text}  links:{name,url} */
+const S=(v,l,c)=>({views:String(v),likes:String(l),comments:String(c),asOf:'2026-11-16'});
+const CONTENT={mr:{videos:[{id:'bQt7pxt-cz8',title:'2. Dünya Savaşı Konulu EN İYİ FİLMLER!',tag:'EN ÇOK BEĞENİLEN',stats:S(693256,12876,873)},{id:'aho-y0J6z-E',title:'Mutlaka İzlenmesi Gereken 7 FİLM!',tag:'EN ÇOK BEĞENİLEN',stats:S(445638,5099,293)},{id:'wjza4YtBLzE',title:'Gerçekten İzlemeye Değer 10 FİLM!',tag:'EN ÇOK BEĞENİLEN',stats:S(308542,5042,92)},{id:'wVqWj7PUkso',title:'Yalnızlık...',tag:'EN ÇOK BEĞENİLEN',stats:S(72967,3535,217)},{id:'GTyuaSsJQkQ',title:'Mutlaka İzlenmesi Gereken 10 FİLM',tag:'EN ÇOK BEĞENİLEN',stats:S(493542,3321,297)},{id:'ZyYvfPd8p9M',title:'Netflix’te İzlenilmesi Gereken 10 FİLM!',tag:'EN ÇOK BEĞENİLEN',stats:S(364459,3311,130)},{id:'7OHrfjlGY-0',title:'Netflix’te İzlenmesi Gereken 10 FİLM!',tag:'EN ÇOK BEĞENİLEN',stats:S(223289,3304,85)},{id:'h9Fivq6os04',title:'İZLEDİĞİM EN İYİ 10 FİLM!',tag:'EN ÇOK YORUMLANAN',stats:S(149238,3249,416)},{id:'EByog3MGqJk',title:'Hemen İzlemen Gereken 10 FİLM!',tag:'#ENİYİFİLMLER',stats:S(340828,2879,117),comments:[{u:'@kagan.kurnaz',t:'sinners i izledik hayatımda bu kadar kötü bir tavsiye görmedim.. sakın vakit kaymetmeyin',l:18},{u:'@cyberunnner',t:'O kadar çok film tükettim ki, sen olmasan iyi bir şey bulamayacağım. Çok sağol ya. 💯',l:13},{u:'@muammeratik13',t:'yeni intro mükemmel reis',l:12},{u:'@umutsahin2702',t:'The road en sevdiğim film\'dir',l:11},{u:'@Rahibibrahimov1905',t:'Sinnersi senin tavsiyenle izledim. İyiki izlemişim. Filme 10 üzerinden 7 verdim. ❤',l:7}]},{id:'You5NW2Mh_w',title:'MAFYA KONULU EN İYİ 10 FİLM!',tag:'EN ÇOK BEĞENİLEN',stats:S(112113,2532,142)},{id:'eCvrO6ksfds',title:'2025’te İzlemen Gereken 10 FİLM',tag:'EN ÇOK BEĞENİLEN',stats:S(196895,2378,100)},{id:'0i10l7MqN_I',title:'İzledikten Sonra Etkisinden Çıkamayacağınız 10 FİLM!',tag:'EN ÇOK BEĞENİLEN',stats:S(79721,2065,104)}],posts:[],links:[{name:'YouTube · MoviRunner',url:'https://www.youtube.com/@MoviRunner'},{name:'Instagram · MoviRunner',url:'https://www.instagram.com/movirunner/'},{name:'X · MoviRunner',url:'https://x.com/movirunner'}],contact:{name:'Hakan Çeken',bio:'sinema • dizi • gaming',email:'movirunner@socialfamo.us'}},fs:{videos:[{id:'Hi3y0O1u0zU',title:'ÖZGÜN KORKU FİLMİ ARAYANLARA',tag:'SHORTS',stats:S(1788388,19838,376)},{id:'k589XlYTMVg',title:'PALYAÇO TEMALI FİLM ARAYANLARA',tag:'SHORTS',stats:S(706322,17637,223)},{id:'Sck3Rp8hi7I',title:'RAHATSIZ EDİCİ BİR FİLM ARAYANLARA',tag:'SHORTS',stats:S(288614,9435,118)},{id:'ZUOAltX5UV4',title:'KABUS GİBİ KORKU FİLMİ ARAYANLARA',tag:'SHORTS',stats:S(274107,8997,152)},{id:'a7YLeocaLf8',title:'Kukla oynatıcısının kabusu',tag:'SHORTS',stats:S(281087,8620,58)},{id:'yWXMrGwNxWM',title:'AŞIRI KORKUNÇ FİLM ARAYANLARA',tag:'SHORTS',stats:S(464356,8096,161)},{id:'SOX3Zln17xI',title:'RAHATSIZ EDİCİ FİLM ARAYANLARA!',tag:'SHORTS',stats:S(192209,7959,145)},{id:'F654DDaeHgE',title:'AKIL HASTANESİ TEMALI KORKU FİLMİ ARAYANLARA',tag:'SHORTS',stats:S(122526,7011,72)},{id:'llcsltX-Pgs',title:'MİTOLOJİK KORKU FİLM ARAYANLARA',tag:'SHORTS',stats:S(142005,5999,96)},{id:'lgYS9Ljw4Jo',title:'TÜYLER ÜRPERTİCİ KORKU FİLMİ',tag:'SHORTS',stats:S(238366,5955,111)},{id:'tVhJE0qnBMY',title:'SALGIN TEMALI FİLM ARAYANLARA',tag:'SHORTS',stats:S(139381,5532,59)},{id:'bBHCATssIlw',title:'RAHATSIZ EDİCİ FİLM ARAYANLARA',tag:'EN ÇOK YORUMLANAN',stats:S(163173,5175,332)}],posts:[],links:[{name:'YouTube · Filmosferatu',url:'https://www.youtube.com/@Filmosferatu'},{name:'Instagram · Filmosferatu',url:'https://www.instagram.com/filmosferatu/'},{name:'TikTok · Filmosferatu',url:'https://www.tiktok.com/@filmosferatu'}],contact:{name:'Gökan Çeken',bio:'Sinema | Dizi',email:'filmosferatu@gmail.com'}}};
+const BR={mr:{n:'MOVIRUNNER',d:{bg:'#000000',fg:'#ffffff',ac:'#c0c0c0',card:'#101010'},l:{bg:'#f1f1f1',fg:'#121212',ac:'#555555',card:'#ffffff'}},
+fs:{n:'FILMOSFERATU',d:{bg:'#121212',fg:'#f1f1f1',ac:'#0077ff',card:'#191919'},l:{bg:'#f1f1f1',fg:'#121212',ac:'#0057c0',card:'#ffffff'}},
+home:{n:'',d:{bg:'#000000',fg:'#ffffff',ac:'#c0c0c0',card:'#101010'},l:{bg:'#ffffff',fg:'#000000',ac:'#555555',card:'#f4f4f4'}}};
+const I={
+tr:{home:'ANA SAYFA',explore:'KEŞFET',search:'Ara…',share:'Paylaş',open:'İÇERİKLERİ KEŞFET',vid:'Video arşivi',posts:'Film eleştirileri ve öneriler',soc:'Resmî sosyal hesaplar',soon:'Gerçek içerik yönetici tarafından eklendiğinde burada görünecek.',set:'Görünüm',bg:'Arka plan',tx:'Yazı',ac:'Vurgu',font:'Yazı tipi',reset:'SIFIRLA',none:'Sonuç yok.',sample:'ÖRNEK',all:'İki marka',d_mr:'Film önerileri, eleştiriler, oyuncularla sohbetler ve sinema yayınları.',d_fs:'Korku sineması, psikolojik gerilim, karanlık seçkiler ve film incelemeleri.',h1:'Filmleri değil,',h2:'fikirleri keşfet.',bar:'İKİ SES · TEK SİNEMA KÜLTÜRÜ',intro:'Bu site film izletmez; sinema üzerine içerikleri keşfetmenizi sağlar.',ph:'Başlık ara'},
+en:{home:'HOME',explore:'EXPLORE',search:'Search…',share:'Share',open:'EXPLORE CONTENT',vid:'Video archive',posts:'Film reviews and picks',soc:'Official social accounts',soon:'Real content will appear here once the editor adds it.',set:'Appearance',bg:'Background',tx:'Text',ac:'Accent',font:'Typeface',reset:'RESET',none:'No results.',sample:'SAMPLE',all:'Both brands',d_mr:'Film recommendations, reviews, talks with actors and cinema broadcasts.',d_fs:'Horror cinema, psychological thrillers, dark selections and film reviews.',h1:'Don’t just watch films,',h2:'discover ideas.',bar:'TWO VOICES · ONE CINEMA CULTURE',intro:'This site does not stream films; it helps you discover content about cinema.',ph:'Search titles'},
+ru:{home:'ГЛАВНАЯ',explore:'ПОИСК',search:'Поиск…',share:'Поделиться',open:'СМОТРЕТЬ МАТЕРИАЛЫ',vid:'Видеоархив',posts:'Рецензии и рекомендации',soc:'Официальные аккаунты',soon:'Настоящий контент появится после добавления редактором.',set:'Оформление',bg:'Фон',tx:'Текст',ac:'Акцент',font:'Шрифт',reset:'СБРОС',none:'Ничего не найдено.',sample:'ПРИМЕР',all:'Оба бренда',d_mr:'Рекомендации фильмов, рецензии, беседы с актёрами и кинопередачи.',d_fs:'Кино ужасов, психологические триллеры, мрачные подборки и обзоры.',h1:'Не фильмы,',h2:'а идеи открывайте.',bar:'ДВА ГОЛОСА · ОДНА КИНОКУЛЬТУРА',intro:'Сайт не показывает фильмы, а помогает находить материалы о кино.',ph:'Поиск по названию'},
+zh:{home:'首页',explore:'探索',search:'搜索…',share:'分享',open:'探索内容',vid:'视频档案',posts:'影评与推荐',soc:'官方社交账号',soon:'编辑添加真实内容后将在此显示。',set:'外观',bg:'背景',tx:'文字',ac:'强调色',font:'字体',reset:'重置',none:'没有结果。',sample:'示例',all:'两个品牌',d_mr:'电影推荐、影评、与演员的对谈和电影节目。',d_fs:'恐怖电影、心理惊悚、黑暗精选与影评。',h1:'不只是看电影，',h2:'更要发现想法。',bar:'两种声音 · 一种电影文化',intro:'本站不提供电影播放，只帮助你发现电影相关内容。',ph:'搜索标题'},
+ja:{home:'ホーム',explore:'探す',search:'検索…',share:'共有',open:'コンテンツを探す',vid:'動画アーカイブ',posts:'映画レビューとおすすめ',soc:'公式SNS',soon:'編集者が実際のコンテンツを追加するとここに表示されます。',set:'外観',bg:'背景',tx:'文字',ac:'アクセント',font:'書体',reset:'リセット',none:'結果がありません。',sample:'サンプル',all:'両ブランド',d_mr:'映画のおすすめ、レビュー、俳優との対談、映画番組。',d_fs:'ホラー映画、心理サスペンス、ダークな選集、映画レビュー。',h1:'映画ではなく、',h2:'アイデアを発見。',bar:'二つの声 · ひとつの映画文化',intro:'このサイトは映画を配信しません。映画に関する情報を見つける場所です。',ph:'タイトル検索'},
+es:{home:'INICIO',explore:'EXPLORAR',search:'Buscar…',share:'Compartir',open:'EXPLORAR CONTENIDO',vid:'Archivo de vídeos',posts:'Críticas y recomendaciones',soc:'Cuentas oficiales',soon:'El contenido real aparecerá aquí cuando el editor lo añada.',set:'Apariencia',bg:'Fondo',tx:'Texto',ac:'Acento',font:'Tipografía',reset:'RESTABLECER',none:'Sin resultados.',sample:'EJEMPLO',all:'Ambas marcas',d_mr:'Recomendaciones de cine, críticas, charlas con actores y emisiones de cine.',d_fs:'Cine de terror, thrillers psicológicos, selecciones oscuras y reseñas.',h1:'No descubras películas,',h2:'descubre ideas.',bar:'DOS VOCES · UNA CULTURA CINEMATOGRÁFICA',intro:'Este sitio no emite películas; te ayuda a descubrir contenido sobre cine.',ph:'Buscar títulos'},
+el:{home:'ΑΡΧΙΚΗ',explore:'ΑΝΑΖΗΤΗΣΗ',search:'Αναζήτηση…',share:'Κοινοποίηση',open:'ΕΞΕΡΕΥΝΗΣΗ ΠΕΡΙΕΧΟΜΕΝΟΥ',vid:'Αρχείο βίντεο',posts:'Κριτικές και προτάσεις',soc:'Επίσημοι λογαριασμοί',soon:'Το πραγματικό περιεχόμενο θα εμφανιστεί όταν το προσθέσει ο διαχειριστής.',set:'Εμφάνιση',bg:'Φόντο',tx:'Κείμενο',ac:'Έμφαση',font:'Γραμματοσειρά',reset:'ΕΠΑΝΑΦΟΡΑ',none:'Κανένα αποτέλεσμα.',sample:'ΔΕΙΓΜΑ',all:'Και τα δύο brand',d_mr:'Προτάσεις ταινιών, κριτικές, συζητήσεις με ηθοποιούς και κινηματογραφικές εκπομπές.',d_fs:'Κινηματογράφος τρόμου, ψυχολογικά θρίλερ, σκοτεινές επιλογές και κριτικές.',h1:'Όχι ταινίες,',h2:'ανακάλυψε ιδέες.',bar:'ΔΥΟ ΦΩΝΕΣ · ΜΙΑ ΚΙΝΗΜΑΤΟΓΡΑΦΙΚΗ ΚΟΥΛΤΟΥΡΑ',intro:'Ο ιστότοπος δεν προβάλλει ταινίες· σε βοηθά να βρεις περιεχόμενο για τον κινηματογράφο.',ph:'Αναζήτηση τίτλων'}};
+const $=s=>document.querySelector(s),V=['home','mr','fs','explore'];
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const ls={get(k,d){try{const v=localStorage.getItem(k);return v===null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let lang=ls.get('mf-lang',(navigator.language||'tr').slice(0,2));if(!I[lang])lang='tr';
+const T=k=>I[lang][k]||I.tr[k];
+const page=()=>{const h=location.hash.slice(1);return V.includes(h)?h:'home'};
+const mode=p=>ls.get('mf-mode-'+p,'d');
+function pal(p){const m=mode(p),b=(BR[p]||BR.home)[m],o=ls.get('mf-pal-'+p+'-'+m,{});return Object.assign({},b,o)}
+function theme(){const p=page(),c=pal(p);const s=document.documentElement.style;
+s.setProperty('--bg',c.bg);s.setProperty('--fg',c.fg);s.setProperty('--ac',c.ac);s.setProperty('--card',c.card);s.setProperty('--ln',c.fg+'55');
+s.setProperty('--ff',ls.get('mf-font-'+p,'Arial,Helvetica,sans-serif'));document.documentElement.lang=lang}
+const SL={tr:['izlenme','beğeni','yorum','itibarıyla','YouTube’da aç ve yorumları oku'],en:['views','likes','comments','as of','Open on YouTube and read comments'],ru:['просмотры','лайки','комментарии','на','Открыть на YouTube и читать комментарии'],zh:['观看','点赞','评论','截至','在 YouTube 打开并阅读评论'],ja:['回視聴','高評価','コメント','時点','YouTube で開いてコメントを読む'],es:['visualizaciones','me gusta','comentarios','a fecha de','Abrir en YouTube y leer comentarios'],el:['προβολές','likes','σχόλια','έως','Άνοιγμα στο YouTube και ανάγνωση σχολίων']};
+const TC={tr:'Öne çıkan gerçek yorumlar',en:'Top real comments',ru:'Популярные реальные комментарии',zh:'热门真实评论',ja:'注目の実際のコメント',es:'Comentarios reales destacados',el:'Κορυφαία πραγματικά σχόλια'};
+function com(v){const c=v.comments||[];if(!c.length)return '';return `<details style="margin-top:8px"><summary style="cursor:pointer;font-size:12px;font-weight:800">${TC[lang]||TC.tr}</summary>`+c.map(x=>`<blockquote style="margin:8px 0;padding-left:10px;border-left:2px solid var(--ac);font-size:12px">${esc(x.t)}<br><small style="opacity:.65">${esc(x.u)} · ♥ ${x.l}</small></blockquote>`).join('')+`</details>`}
+function kfmt(x){if(/^\d+$/.test(String(x)))return new Intl.NumberFormat(lang,{notation:'compact',maximumFractionDigits:1}).format(Number(x));const m=/^(\d+(?:,\d+)?)\s*B$/.exec(String(x));return m?new Intl.NumberFormat(lang,{notation:'compact',maximumFractionDigits:1}).format(parseFloat(m[1].replace(',','.'))*1000):String(x)}
+function stats(v,id){if(!v.stats||!id)return '';const s=v.stats,L=SL[lang]||SL.tr;let d=s.asOf;try{d=new Date(s.asOf+'T00:00:00').toLocaleDateString(lang)}catch(e){}
+return `<div class="row" style="font-size:12px"><span>👁 ${esc(kfmt(s.views))} ${L[0]}</span><span>♥ ${esc(kfmt(s.likes))} ${L[1]}</span><span>💬 ${esc(s.comments)} ${L[2]}</span></div><p style="font-size:11px;margin-top:8px">${L[3]} ${esc(d)}</p>${com(v)}<a class="b" rel="noopener" target="_blank" style="margin-top:8px" href="https://www.youtube.com/watch?v=${id}">${L[4]} ↗</a>`}
+function video(v,n){const id=/^[\w-]{11}$/.test(v.id||'')?v.id:'';
+return `<article class="c ${/filmo/i.test(n)?'fs':'mr'}"><div class="th">${/^videos\/[\w.-]+\.webm$/.test(v.webm||'')?`<video controls preload="none" playsinline poster="${/^videos\/[\w.-]+\.webp$/.test(v.poster||'')?v.poster:''}" src="${v.webm}"></video>`:id?`<button class="pl" data-yt="${id}" aria-label="▶ ${esc(v.title)}">▶</button>`:'<span class="pl" style="display:grid;place-items:center">▶</span>'}</div><div class="m">${n} · ${esc(v.tag||'')}</div><h3>${esc(v.title)}</h3>${stats(v,id)}${id?`<a class="yt" href="https://www.youtube.com/watch?v=${id}" target="_blank" rel="noopener">YouTube ↗</a>`:''}</article>`}
+function brand(p){const x=CONTENT[p],n=BR[p].n;
+return `<section class="w" style="padding:44px 0 30px"><div class="ey">CINEMA CULTURE / ${p==='mr'?'BRAND 01':'BRAND 02'}</div><h1>${n}</h1><p>${T('d_'+p)}</p><div class="row"><button class="b p" data-share="${n}">${T('share')} ↗</button><a class="b" href="#explore">${T('open')}</a></div></section>
+<section class="sec"><div class="w"><div class="ey">${T('vid').toUpperCase()}</div><h2>${T('vid')}</h2>${x.videos.length?`<div class="g">${x.videos.map(v=>video(v,n)).join('')}</div>`:`<div class="em">${T('soon')}</div>`}</div></section>
+<section class="sec"><div class="w"><h2>${T('posts')}</h2>${x.posts.length?`<div class="g">${x.posts.map(a=>`<article class="c"><h3>${esc(a.title)}</h3><p>${esc(a.text||'')}</p></article>`).join('')}</div>`:`<div class="em">${T('soon')}</div>`}</div></section>
+<section class="sec"><div class="w"><h2>${T('soc')}</h2><div class="row">${x.links.length?x.links.filter(l=>/^https:\/\//.test(l.url)).map(l=>`<a class="b" rel="noopener" target="_blank" href="${esc(l.url)}">${esc(l.name)}</a>`).join(''):`<div class="em" style="width:100%">${T('soon')}</div>`}</div>${x.contact?`<p style="margin-top:16px"><strong>${esc(x.contact.name)}</strong> · ${esc(x.contact.bio)}<br><a class="yt" href="mailto:${esc(x.contact.email)}">✉ ${esc(x.contact.email)}</a></p>`:''}</div></section>`}
+function home(){return `<section class="w hero"><div><div class="ey">${T('bar')}</div><h1>${T('h1')}<br><em>${T('h2')}</em></h1><p>${T('intro')}</p><div class="row"><a class="b p" href="#mr">MOVIRUNNER ↗</a><a class="b" href="#fs">FILMOSFERATU ↗</a></div></div>
+<div class="art"><a class="t a" href="#mr"><small>01 / MOVIRUNNER</small><strong>THE ART<br>OF FILM TALK.</strong><small>FILM · IDEAS · PEOPLE</small></a><a class="t f" href="#fs"><small>02 / FILMOSFERATU</small><strong>BEYOND<br>THE DARK.</strong><small>HORROR · REVIEWS</small></a></div></section>
+<section class="sec"><div class="w"><h2>${T('vid')}</h2><div class="g"><article class="c"><div class="th"><span class="pl" style="display:grid;place-items:center">▶</span></div><div class="m">MOVIRUNNER · ${T('sample')}</div><h3>—</h3></article><article class="c"><div class="th"><span class="pl" style="display:grid;place-items:center">▶</span></div><div class="m">FILMOSFERATU · ${T('sample')}</div><h3>—</h3></article></div></div></section>`}
+function explore(){return `<section class="w" style="padding:44px 0"><div class="ey">${T('explore')}</div><h1>${T('explore')}</h1><div class="f"><input id="q" placeholder="${esc(T('ph'))}" aria-label="${esc(T('ph'))}"><select id="bs"><option value="">${T('all')}</option><option value="mr">MoviRunner</option><option value="fs">Filmosferatu</option></select><select id="ty"><option value="">—</option><option value="videos">${T('vid')}</option><option value="posts">${T('posts')}</option></select></div><div id="rs2" style="margin-top:22px"></div></section>`}
+function runFilter(){const q=($('#q').value||'').trim().toLowerCase(),b=$('#bs').value,t=$('#ty').value,out=[];
+for(const p of ['mr','fs']){if(b&&b!==p)continue;for(const k of ['videos','posts']){if(t&&t!==k)continue;for(const it of CONTENT[p][k])if(!q||(it.title||'').toLowerCase().includes(q))out.push(k==='videos'?video(it,BR[p].n):`<article class="c"><div class="m">${BR[p].n}</div><h3>${esc(it.title)}</h3><p>${esc(it.text||'')}</p></article>`)}}
+$('#rs2').innerHTML=out.length?`<div class="g">${out.join('')}</div>`:`<div class="em">${T('none')}</div>`}
+function render(){const p=page();theme();$('#bar').textContent=T('bar');$('#yr').textContent=new Date().getFullYear();$('#lng').value=lang;
+$('#nav').innerHTML=[['home',T('home')],['mr','MOVIRUNNER'],['fs','FILMOSFERATU'],['explore',T('explore')]].map(([k,l])=>`<a class="b${k===p?' on':''}" href="#${k}"${k===p?' aria-current="page"':''}>${l}</a>`).join('');
+$('#app').innerHTML=({home,mr:()=>brand('mr'),fs:()=>brand('fs'),explore})[p]();
+if(p==='explore'){['q','bs','ty'].forEach(i=>$('#'+i).addEventListener('input',runFilter));runFilter()}
+$('#dt').textContent=T('set');[['l1','bg'],['l2','tx'],['l3','ac'],['l4','font']].forEach(([i,k])=>$('#'+i).textContent=T(k).toUpperCase());$('#rs').textContent=T('reset');
+const c=pal(p);[['1','bg'],['2','fg'],['3','ac']].forEach(([n,k])=>{$('#k'+n).value=c[k];$('#x'+n).value=c[k];$('#r'+n).textContent=rgb(c[k])});$('#ft').value=ls.get('mf-font-'+p,'Arial,Helvetica,sans-serif');window.scrollTo(0,0)}
+const rgb=h=>{const m=/^#([0-9a-f]{2})([0-9a-f]{2})([0-9a-f]{2})$/i.exec(h);return m?`rgb(${parseInt(m[1],16)}, ${parseInt(m[2],16)}, ${parseInt(m[3],16)})`:''};
+function setPal(k,v){if(!/^#[0-9a-f]{6}$/i.test(v))return;const p=page(),m=mode(p),key='mf-pal-'+p+'-'+m,o=ls.get(key,{});o[k]=v;ls.set(key,o);theme();
+const c=pal(p);[['1','bg'],['2','fg'],['3','ac']].forEach(([n,kk])=>{$('#k'+n).value=c[kk];$('#x'+n).value=c[kk];$('#r'+n).textContent=rgb(c[kk])})}
+[['1','bg'],['2','fg'],['3','ac']].forEach(([n,k])=>{$('#k'+n).addEventListener('input',e=>setPal(k,e.target.value));$('#x'+n).addEventListener('change',e=>setPal(k,e.target.value.startsWith('#')?e.target.value:'#'+e.target.value))});
+$('#ft').addEventListener('change',e=>{ls.set('mf-font-'+page(),e.target.value);theme()});
+$('#rs').addEventListener('click',()=>{const p=page();['d','l'].forEach(m=>{try{localStorage.removeItem('mf-pal-'+p+'-'+m)}catch(e){}});try{localStorage.removeItem('mf-font-'+p)}catch(e){}render()});
+$('#thm').addEventListener('click',()=>{const p=page();ls.set('mf-mode-'+p,mode(p)==='d'?'l':'d');render()});
+$('#opt').addEventListener('click',()=>$('#dr').classList.add('o'));$('#cl').addEventListener('click',()=>$('#dr').classList.remove('o'));
+$('#lng').addEventListener('change',e=>{lang=e.target.value;ls.set('mf-lang',lang);render()});
+document.addEventListener('click',e=>{const y=e.target.closest('[data-yt]');if(y){const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+y.dataset.yt+'?autoplay=1&rel=0';f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';f.allowFullscreen=true;f.title='YouTube';y.parentNode.replaceChildren(f)}
+const s=e.target.closest('[data-share]');if(s){const u=location.protocol.startsWith('http')?': '+location.href:'';window.open('https://wa.me/?text='+encodeURIComponent(s.dataset.share+u),'_blank','noopener')}});
+window.addEventListener('hashchange',render);render();
+/* sync_videos.py'nin ürettiği videos.json (kendi sunucunuzda) varsa kanal videolarını yükler; yoksa sessizce atlanır */
+fetch('videos.json').then(r=>r.ok?r.json():null).then(d=>{if(!d)return;for(const p of ['mr','fs'])if(Array.isArray(d[p])){const ids=new Set(d[p].map(x=>x.id));CONTENT[p].videos=d[p].concat(CONTENT[p].videos.filter(x=>!ids.has(x.id)))}render()}).catch(()=>{});
+</script></body></html>
