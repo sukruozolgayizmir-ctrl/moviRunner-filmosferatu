@@ -1,0 +1,29 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>Video test sayfası</title>
+<style>body{background:#09090b;color:#f4f4f5;font:15px/1.5 system-ui,sans-serif;margin:0}main{max-width:1100px;margin:0 auto;padding:1.5rem 5%}h1{margin-bottom:.5rem}#sum{padding:.8rem 1rem;border:1px solid #27272a;border-radius:10px;background:#131317;margin:1rem 0}button{background:#eab308;color:#000;border:0;border-radius:8px;padding:.6rem 1rem;font-weight:700;cursor:pointer}.w{overflow-x:auto;margin-top:1rem}table{border-collapse:collapse;width:100%;min-width:760px}th,td{padding:.4rem .6rem;border-bottom:1px solid #27272a;text-align:left;font-size:.88rem}th{color:#eab308}tr.ok td:last-child{color:#4ade80}tr.bad td:last-child{color:#f87171}tr.bad{background:rgba(248,113,113,.08)}</style></head><body><main>
+<h1>Video test sayfası</h1><p>Her videoyu sırayla yükler: dosya var mı, boyutu, süresi, ileri sarma ve kapak resmi. İnternet hızına göre birkaç dakika sürebilir.</p>
+<button id="go">Testi başlat / yenile</button><p id="sum">Hazır.</p>
+<div class="w"><table><thead><tr><th>Kanal</th><th>Video</th><th>Dosya</th><th>Boyut</th><th>Süre / çözünürlük</th><th>Sarma</th><th>Kapak</th><th>Sonuç</th></tr></thead><tbody id="tb"></tbody></table></div></main>
+<script>
+const T=(p,ms)=>Promise.race([p,new Promise((_,r)=>setTimeout(()=>r(new Error('zaman aşımı')),ms))]);
+const ev=(el,ok,bad)=>new Promise((res,rej)=>{el.addEventListener(ok,()=>res(),{once:true});el.addEventListener(bad,()=>rej(new Error('tarayıcı videoyu açamadı')),{once:true})});
+async function one(v,tr){const c=tr.children,res={ok:true,notes:[],size:0};c[2].textContent=v.webm||'(yok)';
+ try{if(!/^videos\/[\w.-]+\.webm$/.test(v.webm||''))throw new Error('geçersiz dosya yolu');
+  const h=await T(fetch(v.webm,{method:'HEAD',cache:'no-store'}),15000);if(!h.ok)throw new Error('HTTP '+h.status);
+  const len=+h.headers.get('content-length')||0;res.size=len;c[3].textContent=(len/1e6).toFixed(1)+' MB';if(len<50000)throw new Error('dosya çok küçük');
+  const vid=document.createElement('video');vid.preload='metadata';vid.muted=true;vid.src=v.webm+'?t='+Date.now();
+  await T(ev(vid,'loadedmetadata','error'),25000);if(!(vid.duration>0)||!vid.videoWidth)throw new Error('süre/çözünürlük okunamadı');
+  c[4].textContent=Math.round(vid.duration)+' sn · '+vid.videoWidth+'×'+vid.videoHeight;
+  try{vid.currentTime=Math.min(1,vid.duration/2);await T(ev(vid,'seeked','error'),20000);c[5].textContent='✓'}catch(e){c[5].textContent='✗';res.notes.push('ileri sarma çalışmıyor')}
+  vid.removeAttribute('src');vid.load();
+ }catch(e){res.ok=false;res.err=e.message}
+ if(v.poster){const ok=await T(new Promise(r=>{const i=new Image();i.onload=()=>r(1);i.onerror=()=>r(0);i.src=v.poster}),10000).catch(()=>0);c[6].textContent=ok?'✓':'✗';if(!ok)res.notes.push('kapak açılmıyor')}else{c[6].textContent='yok';res.notes.push('kapak yok')}
+ c[7].textContent=res.ok?(res.notes.length?'⚠ '+res.notes.join(', '):'✓ Tamam'):'✗ '+res.err;tr.className=res.ok?'ok':'bad';return res}
+async function run(){const tb=document.getElementById('tb'),sum=document.getElementById('sum');tb.innerHTML='';window.__done=false;
+ let d;try{const r=await fetch('videos.json',{cache:'no-store'});if(!r.ok)throw new Error('HTTP '+r.status);d=await r.json()}catch(e){sum.textContent='✗ videos.json okunamadı: '+e.message;window.__done=true;return}
+ const jobs=[];for(const k of ['mr','fs'])for(const v of (d[k]||[])){const tr=document.createElement('tr');tr.innerHTML='<td>'+(k==='mr'?'MoviRunner':'Filmosferatu')+'</td><td></td><td></td><td></td><td></td><td></td><td></td><td>bekliyor…</td>';tr.children[1].textContent=v.id||'?';tb.appendChild(tr);jobs.push([v,tr])}
+ sum.textContent='Test sürüyor… 0/'+jobs.length;let i=0,done=0;const out=[];
+ await Promise.all(Array.from({length:3},async()=>{while(i<jobs.length){const [v,tr]=jobs[i++];out.push(await one(v,tr));done++;sum.textContent='Test sürüyor… '+done+'/'+jobs.length}}));
+ const okc=out.filter(r=>r.ok).length,warn=out.filter(r=>r.ok&&r.notes.length).length,mb=out.reduce((a,r)=>a+r.size,0)/1e6;
+ sum.textContent=(okc===jobs.length?'✓ ':'✗ ')+okc+'/'+jobs.length+' video açıldı ('+warn+' uyarı) · MoviRunner '+(d.mr||[]).length+', Filmosferatu '+(d.fs||[]).length+' · toplam '+mb.toFixed(0)+' MB';window.__done=true}
+document.getElementById('go').onclick=run;run();
+</script></body></html>
