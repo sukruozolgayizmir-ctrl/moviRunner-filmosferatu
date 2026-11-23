@@ -6,7 +6,16 @@
 - [Ana sayfa, en çok beğenilen videolar](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/): MoviRunner ve Filmosferatu'nun en çok beğenilen film videoları.
 - [Sinema ve Oyun Tarihi](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/tarihce.html): 1895'ten günümüze zaman tüneli ve sık sorulan sorular.
 - [Son 20 Yılın Ödül Arşivi](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/odul-arsivi.html): Ödüllü filmler, yönetmenler, oyuncular ve senaryolar.
+- [Video Oyunları Tarihi ve En İyi Oyunlar](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/oyunlar.html): oyun tarihi, The Game Awards kazananları ve yaşa göre oyun önerileri.
+- [GTA 6 (GTA VI)](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/gta6.html): yenilikler, GTA V ile farkları, çıkış rakamları ve yaş sınırı.
+- [Video Oyunları Tarihi ve En İyi Oyunlar](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/oyunlar.html): oyun tarihi, The Game Awards kazananları ve yaşa göre öneriler.
+- [GTA 6 (Grand Theft Auto VI)](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/gta6.html): çıkış, yenilikler, GTA V ile farklar, puanlar ve satış rekorları.
 
 ## Resmî hesaplar
 - MoviRunner: https://www.youtube.com/@MoviRunner , https://www.instagram.com/movirunner/ , https://x.com/movirunner
 - Filmosferatu: https://www.youtube.com/@Filmosferatu , https://www.instagram.com/filmosferatu/ , https://www.tiktok.com/@filmosferatu
+
+## Ek kaynaklar
+- [Tam metin](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/llms-full.txt): sayfaların düz metin sürümü.
+- [Atom akışı](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/feed.xml): sayfa listesi ve güncelleme tarihleri.
+- [Site haritası](https://sukruozolgayizmir-ctrl.github.io/moviRunner-filmosferatu/sitemap.xml)
